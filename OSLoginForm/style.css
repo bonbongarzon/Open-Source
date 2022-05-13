@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    max-width:100%;
     font-family: Inter;
 }
 
@@ -18,6 +19,8 @@
     background-color: aliceblue;
 }
 
+.home-pre-sec{background-color: #713FFF;}
+
 .header {
     width: 40%;
     padding: 30px;
@@ -32,6 +35,20 @@ span {
     color: rgb(28, 28, 173);
     font-size: 20px;
     font-weight: 700;
+    text-decoration: none;
+}
+
+.home-header{    width: 40%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;}
+
+.home-header h1,
+a,
+span {
+    color: #26055D;
+    font-size: 20px;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -79,7 +96,10 @@ span {
     justify-content: center
 }
 
-.right-cont h1{font-size: 12pt;}
+.right-cont h1 {
+    font-size: 12pt;
+}
+
 
 form {
     justify-content: space-between;
@@ -107,9 +127,51 @@ form button {
 
 form button:hover {
     background-color: white;
-    color:rgb(28, 28, 173);
+    color: rgb(28, 28, 173);
     transition: 0.3s;
-    border: solid ;
+    border: solid;
     padding: 20px;
 
 }
+
+.home-cont {
+    background-color:
+        #713FFF;
+    display: flex;
+    width: 100%;
+    height: 550px;
+}
+
+.home-state {
+
+    margin-left: 0px;
+    background-color:
+        #713FFF;
+        width: 50%;
+
+        display: flex;
+        flex-direction: column;
+}
+
+.home-state h1 {
+    color: #26055D;
+    font-weight: 400;
+    letter-spacing: -0.1em;
+    font-size: 50pt;
+}
+
+.home-state h1 span {
+    color: #F4F1F9;
+    font-size: 40pt;
+    font-weight: 400;
+    letter-spacing: -0.1em;
+    font-size: 50pt;
+}
+
+
+.label{ padding: 50px; width: 50%; display: flex;
+    align-items: flex-end}
+.label h1{    color: #26055D;
+    font-weight: 400;
+    letter-spacing: -0.1em;
+    font-size: 70pt;}

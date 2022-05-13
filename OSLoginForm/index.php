@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Open Source | Login Form</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,8 @@
     <section class="pre-sec">
         <div class="header">
             <h1>01</h1>
-            <a href="#">about</a>
-            <span><a href="#">form</a> x post, 2022</span>
-            <!-- <h1>about</h1>
-                <h1>form x post,2022</h1> -->
+            <a href="about.php">about</a>
+            <span><a href="index.php">form</a> x post, 2022</span>
         </div>
     </section>
     <section class="first-sec">
@@ -35,6 +33,7 @@
             </div>
             <div class="right-cont">
                 <h1>Welcome, please log-in</h1>
+                <p style="font-size: 10pt; font-weight:400; margin:5px 0px">Please fill-in the fields.</p>
                 <form name="form1" action="authentication.php" onsubmit = "return validation()" method="POST" >
                     <input type="text" placeholder="Username" id="uname" name="uname" >
                     <input type="password" placeholder="Password" id="pwd"  name="pwd" >
@@ -67,20 +66,6 @@
         }                             
     }  
 </script>  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
