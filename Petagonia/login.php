@@ -36,7 +36,20 @@
             <div class="loginform">
                 <h1>Owner's Login</h1>
                 <p>Hey, Enter your details to get sign in to your account</p>
-                <?php include('errors.php'); ?>
+                <?php if (isset($_GET['error'])) {
+                if($_GET["error"] == "nousername-signup"){
+                    echo "<p>Username is Empty</p>";
+                }
+                else if($_GET["error"] == "nopwd-signup"){
+                    echo "<p>Password is Empty!</p>";
+
+                }
+                else if($_GET["error"] == "notmatch"){
+                    echo "<p>Oopss! Username and Password don't match.</p>";
+
+                }
+        
+                } ?>
 
                 <input type="text" name="username" id="" placeholder="Username">
                 <input type="password" name="password" id="" placeholder="Password">

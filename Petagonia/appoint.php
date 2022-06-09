@@ -1,7 +1,8 @@
 <?php include('server.php'); 
-if (!isset($_SESSION['username'])) {
-    header('location: login.php');
-}?>
+// if (!isset($_SESSION['username'])) {
+//     header('location: login.php');
+// }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,18 +29,38 @@ if (!isset($_SESSION['username'])) {
                     <h1>Let's partner up</h1>
                     <p>Let’s take care of your pet, together.</p>
                     <form method="POST" action="server.php">
+
+                    <?php if (isset($_GET['error'])) {
+                if($_GET["error"] == "nopetname"){
+
+                    echo "<p>Pet Name is Required</p>";
+                }
+                else if($_GET["error"] == "nopetbreed"){
+                    echo "<p>Pet Breed Required</p>";
+
+                }
+                else if($_GET["error"] == "nopetgender"){
+                    echo "<p>Please enter your Pet's Gender</p>";
+
+                }
+                else if($_GET["error"] == "nopetdate"){
+                    echo "<p>Pet Birthdate is Require!</p>";
+
+                }
+                
+                } ?>
                        
-                        <input type="text" name="petname" placeholder="Pet's Name">
-                        <input type="text" name="petbreed" placeholder="Breed">
+                        <input type="text" name="petname"  required placeholder="Pet's Name" >
+                        <input type="text" name="petbreed" requiredplaceholder="Breed">
                         <div class="genderplace">
-                            <input class="radio" type="radio" name="petGender" required value="Boy" />
+                            <input class="radio" type="radio" name="petGender"  required value="Boy" />
                             <label for="petGender">Boy</label>
                             <input class="radio" type="radio" name="petGender" required value="Girl" />
                             <label for="petGender">Girl</label>
                         </div>
                         <div class="birthdayplace">
                             <label for="petbdate">Birthdate:</label>
-                            <input type="date" name="petbdate" id="">
+                            <input type="date" name="petbdate" required id="">
                         </div>
                         <br>
                         <textarea name="concerns" id="" cols="20" rows="5">How can we help you?</textarea>

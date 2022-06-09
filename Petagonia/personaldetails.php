@@ -37,10 +37,10 @@ if (!isset($_SESSION['username'])) {
                     <h1>Now, let us know about you</h1>
                     <p>Please provide your personal information. </p>
                     <form method="POST" action="server.php">
-                        <input type="text" name="fname" placeholder="First Name">
-                        <input type="text" name="lname" placeholder="Last Name">
+                        <input type="text" name="fname" placeholder="First Name" required>
+                        <input type="text" name="lname" placeholder="Last Name" required>
                         <div class="pethealth-inner">
-                            <select class="num" name="ownercode" id="">
+                            <select class="num" name="ownercode" id="" required>
                                 <option data-countryCode="GB" value="+44">UK (+44)</option>
                                 <option data-countryCode="US" value="+1">USA (+1)</option>
                                 <optgroup label="Other countries">
@@ -274,18 +274,18 @@ if (!isset($_SESSION['username'])) {
                                 </optgroup>
                             </select>
                         
-                        <input maxlength="11" type="text" onkeypress="numonly(event)" name="ownercontact" id="" placeholder="Contact Number">
+                        <input maxlength="11" type="text" onkeypress="numonly(event)" name="ownercontact" id="" placeholder="Contact Number" required>
                         </div>
                         <div class="owner-inner">
-                            <input type="text" name="Street" id="" placeholder="Street">
-                            <input type="text" name="City" id="" placeholder="City">
+                            <input type="text" name="Street" id="" placeholder="Street" required>
+                            <input type="text" name="City" id="" placeholder="City" required>
                         </div>
                         <div class="owner-inner">
-                            <input type="text" name="State" id="" placeholder="State/Province">
-                            <input type="text" name="Zip" id="" placeholder="Zip Code">
+                            <input type="text" name="State" id="" placeholder="State/Province" required>
+                            <input type="text" name="Zip" id="" placeholder="Zip Code" required>
                         </div>
                         <div class="owner-inner">
-                            <input type="text" name="Country" id="" placeholder="Country">
+                            <input type="text" name="Country" id="" placeholder="Country" required>
                         </div>
                         <button onclick=check() type="submit" name="pageC">Book an Appointment</button>
                     </form>
@@ -299,19 +299,19 @@ if (!isset($_SESSION['username'])) {
 
 </body>
 <script>
-    var form = document.getElementById('sheetdb-form');
-    form.addEventListener("submit", e => {
-        e.preventDefault();
-        fetch(form.action, {
-            method: "POST",
-            body: new FormData(document.getElementById("sheetdb-form")),
-        }).then(
-            response => response.json()
-        ).then((html) => {
+    // var form = document.getElementById('sheetdb-form');
+    // form.addEventListener("submit", e => {
+    //     e.preventDefault();
+    //     fetch(form.action, {
+    //         method: "POST",
+    //         body: new FormData(document.getElementById("sheetdb-form")),
+    //     }).then(
+    //         response => response.json()
+    //     ).then((html) => {
 
-            alert('Thank You! Your Appointment is processing. We will sent you an email once the schedule is reserved.')
-        });
-    });
+    //         alert('Thank You! Your Appointment is processing. We will sent you an email once the schedule is reserved.')
+    //     });
+    // });
 
     function numonly(evt) {
         var ch = String.fromCharCode(evt.which);

@@ -36,11 +36,40 @@ if (!isset($_SESSION['petname'])) {
                 <div class="mini-form">
                     <h1>Let's us know about <u><strong><?php echo $_SESSION['petname']; ?></strong></u></h1>
                     <p>Please provide <?php echo $_SESSION['petPronounsA']; ?> veterinary records.</p>
+                    
+                    <?php if (isset($_GET['error'])) {
+                if($_GET["error"] == "A"){
+
+                    echo "<p>Please Enter the Distemper Due : <b>Month </b></p>";
+                }
+                else if($_GET["error"] == "B"){
+                    echo "<p>Please Enter the Distemper Due : <b>Year </b></p>";
+
+                }
+                else if($_GET["error"] == "C"){
+                    echo "<p>Please Enter the Rabies Due : <b>Month </b></p>";
+
+                }
+                else if($_GET["error"] == "D"){
+                    echo "<p>Please Enter the Rabies Due : <b>Year </b></p>";
+
+                } 
+                else if($_GET["error"] == "E"){
+                    echo "<p>Please Enter the Bordatella Due : <b>Month </b></p>";
+
+                }
+                else if($_GET["error"] == "F"){
+                    echo "<p>Please Enter the Bordatella Due : <b>Year </b></p>";
+
+                }
+                
+                } ?>
+                    
                     <form method="POST" action="server.php">
                         <div class="pethealth-inner">
                             <label>Distemper Due</label>
 
-                            <select id="month" name="DistemperMonth">
+                            <select id="month" name="DistemperMonth" required>
                                 <option>month</option>
                                 <option value="January">January</option>
                                 <option value="February">February</option>
@@ -55,7 +84,7 @@ if (!isset($_SESSION['petname'])) {
                                 <option value="November">November</option>
                                 <option value="December">December</option>
                             </select>
-                            <select id="year" name="DistemperYear">
+                            <select id="year" name="DistemperYear" required>
                                 <option>year</option>
                                 <option value="2000">2000</option>
                                 <option value="2001">2001</option>
@@ -92,7 +121,7 @@ if (!isset($_SESSION['petname'])) {
                         </div>
                         <div class="pethealth-inner">
                             <label>Rabies Due</label>
-                            <select id="month" name="RabiesMonth">
+                            <select id="month" name="RabiesMonth" required>
                                 <option>month</option>
                                 <option value="January">January</option>
                                 <option value="February">February</option>
@@ -107,7 +136,7 @@ if (!isset($_SESSION['petname'])) {
                                 <option value="November">November</option>
                                 <option value="December">December</option>
                             </select>
-                            <select id="year" name="RabiesYear">
+                            <select id="year" name="RabiesYear" required>
                                 <option>year</option>
                                 <option value="2000">2000</option>
                                 <option value="2001">2001</option>
@@ -144,7 +173,7 @@ if (!isset($_SESSION['petname'])) {
                         </div>
                         <div class="pethealth-inner">
                             <label>Bordatella Due</label>
-                            <select id="month" name="BordatellaMonth">
+                            <select id="month" name="BordatellaMonth" required>
                                 <option>month</option>
                                 <option value="January">January</option>
                                 <option value="February">February</option>
@@ -159,7 +188,7 @@ if (!isset($_SESSION['petname'])) {
                                 <option value="November">November</option>
                                 <option value="December">December</option>
                             </select>
-                            <select id="year" name="BordatellaYear">
+                            <select id="year" name="BordatellaYear" required>
                                 <option>year</option>
                                 <option value="2000">2000</option>
                                 <option value="2001">2001</option>
@@ -196,12 +225,12 @@ if (!isset($_SESSION['petname'])) {
 
                         </div>
                         <div class="pethealth-inner">
-                            <label for="">Veterinarian Name</label>
-                            <input type="text" name="vetname" id="" placeholder="Doc.?">
+                            <label for="">Veterinarian Name</label required>
+                            <input type="text" name="vetname" id="" placeholder="Doc.?"required>
                         </div>
                         <div class="pethealth-inner">
                             <label for="">Veterinarian Contact</label>
-                            <select class="num" name="vetAreaCode" id="">
+                            <select class="num" name="vetAreaCode" id=""required>
                                 <option data-countryCode="GB" value="+44">UK (+44)</option>
                                 <option data-countryCode="US" value="+1">USA (+1)</option>
                                 <optgroup label="Other countries">

@@ -1,4 +1,5 @@
-<?php include('server.php'); ?>
+<?php include('server.php'); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +39,25 @@
             
                 <h1>Sign up here</h1>
                 <p>Hey, Enter your details to get sign up for your account</p>
-                <?php include('errors.php'); ?>
+                
+                <?php if (isset($_GET['error'])) {
+                if($_GET["error"] == "nousername-login"){
+                    echo "<p>Username is Required</p>";
+                }
+                else if($_GET["error"] == "noemail-login"){
+                    echo "<p>Email is Required</p>";
+
+                }
+                else if($_GET["error"] == "nopassword-login"){
+                    echo "<p>Password is Required</p>";
+
+                }
+                else if($_GET["error"] == "twopasswordnotmatch"){
+                    echo "<p>Passwords doesn't match!</p>";
+
+                }
+                
+                } ?>
                 <input type="text" name="username" id="" value="<?php echo $username; ?>" placeholder="Username">
                 <input type="email" name="email" id="" value="<?php echo $email; ?>" placeholder="Email">
                 <input type="password" name="password_1" id="" placeholder="Password">
